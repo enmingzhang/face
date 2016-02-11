@@ -28,6 +28,6 @@ var port = process.env.PORT || 1337;
 var url = require('url');
 http.createServer(function(req, res) {
     var queryData = url.parse(req.url, true);
-  res.writeHead(200, { queryData: 'text/plain' });
-  res.end('Hello World\n');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end(queryData);
 }).listen(port);
